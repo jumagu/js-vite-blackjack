@@ -27,7 +27,8 @@ export const machineTurn = (
       playersPoints,
       pointsHtml
     );
-    createCard(playersPoints.length - 1, card, playersCardsContainer);
+    const cardHtml = createCard(playersPoints.length - 1, card);
+    playersCardsContainer[playersPoints.length - 1].append(cardHtml);
   } while (machinePoints < playerPoints && playerPoints <= 21);
   getWinner(playersPoints);
 };

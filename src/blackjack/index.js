@@ -47,7 +47,8 @@ const initializeGame = (players = 2) => {
 reqCardBtn.addEventListener("click", () => {
   const card = requestCard(deck);
   const playerPoints = accumulatePoints(0, card, playersPoints, pointsHtml);
-  createCard(0, card, playersCardsContainer);
+  const cardHtml = createCard(0, card);
+  playersCardsContainer[0].append(cardHtml);
 
   if (playerPoints > 21) {
     reqCardBtn.disabled = true;
